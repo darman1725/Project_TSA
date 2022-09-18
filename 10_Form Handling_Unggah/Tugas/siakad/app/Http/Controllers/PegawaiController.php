@@ -63,11 +63,11 @@ class PegawaiController extends Controller
         $pegawai->divisi = $request->get('divisi');
         $pegawai->email = $request->get('email');
         $pegawai->alamat = $request->get('alamat');
-        $pegawai->images = $request->get('image');
+        $pegawai->image = $request->get('image');
         $pegawai->tanggal_lahir = $request->get('tanggal_lahir');
         
-        if ($request->file('images')) {
-            $pegawai->image = $request->file('images')->store('images', 'public');
+        if ($request->file('image')) {
+            $pegawai->image = $request->file('image')->store('images', 'public');
         }
     
         $pendidikan = new Pendidikan;
@@ -151,7 +151,7 @@ class PegawaiController extends Controller
     $pendidikan->id = $request->get('pendidikan_id');
 
     //fungsi eloquent untuk menambah data dengan relasi belongsTo
-    // $pegawai->pendidikan()->associate($pendidikan);
+    $pegawai->pendidikan()->associate($pendidikan);
     $pegawai->save();
 
     return redirect()->route('pegawai.index')
@@ -160,7 +160,7 @@ class PegawaiController extends Controller
     
     public function downloadPDF() {
         $pegawai = Pegawai::all();
-        $pdf = PDF::loadView('pegawai.pegawai_pdf',compact('Pegawai'));
+        $pdf = PDF::loadView('pegawai.pegawai_pdf',compact('pegawai'));
         return $pdf->stream('pegawai.pdf');
     }
 

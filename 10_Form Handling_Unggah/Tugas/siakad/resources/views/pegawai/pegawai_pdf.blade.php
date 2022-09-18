@@ -29,7 +29,7 @@
     </thead>
     @foreach ($pegawai as $pgw)
     <tr style="text-align: center">
-        <td>{{ $loop->iteration+ }}</td>
+        <td>{{ $loop->iteration }}</td>
         <td>{{ $pgw ->nomor_pegawai }}</td>
         <td>{{ $pgw ->nama }}</td>
         <td>{{ $pgw ->divisi }}</td>

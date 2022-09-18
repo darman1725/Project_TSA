@@ -45,7 +45,7 @@
                     </div>
                     <div class="form-group">
                         <label for="image">Gambar Pegawai</label>
-                        <input type="file" class="form-control" required="required" name="images" value="{{$pegawai->image}}"></br>
+                        <input type="file" class="form-control" required="required" name="image" value="{{$pegawai->image}}"></br>
                         <img width="150px" src="{{asset('storage/'.$pegawai->image)}}">
                     </div>
                     <div class="form-group">

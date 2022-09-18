@@ -17,7 +17,7 @@
                     <li class="list-group-item"><b>Email: </b>{{$pegawai->email}}</li>
                     <li class="list-group-item"><b>Alamat: </b>{{$pegawai->alamat}}</li>
                     <li class="list-group-item"><b>Tanggal Lahir: </b>{{$pegawai->tanggal_lahir}}</li>
-                    <li class="list-group-item"><b>Pendidikan: </b>{{$pegawai->pendidikan->type_pendidikan}}</li>
+                    <li class="list-group-item"><b>Pendidikan: </b>{{$pegawai->pendidikan->jenis_pendidikan}}</li>
                 </ul>
             </div>
             <a class="btn btn-success mt-3" href="{{ route('pegawai.index') }}">Kembali</a>
